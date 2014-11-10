@@ -1,0 +1,109 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>duckunt</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="minimal-ui">
+        <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+
+
+        <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body>
+    <!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="background"></div>
+
+    <div class="mute-button">Mute</div>
+
+    <div class="title-screen-container">
+        <div class="title title-screen">KenHunt</div>
+        <div class="start title-screen">Press "return" to start</div>
+    </div>
+
+    <div class="replay-screen-container">
+        <div class="game-over title-screen">Game Over</div>
+        <div class="restart title-screen">Press "return" to play again.</div>
+    </div>
+
+    <!-- the cube -->
+    <div class="cube-wrap">
+        <div class="cube">
+            <div class="front"><p>Happy Birthday Ken!</p></div>
+            <div class="back"><p class="secret">Ken sucks</p></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </div>
+
+    <div id="game-area" class="game"></div>
+
+    <audio id="theme" preload loop>
+        <source src="audio/mup.mp3" type="audio/mp3"/>
+        <source src="audio/mup.m4a" type="audio/m4a"/>
+        <source src="audio/mup.ogg" type="audio/ogg"/>
+    </audio>
+
+    <audio id="audio-shoot" preload>
+        <source src="audio/shoot.mp3" type="audio/mp3"/>
+        <source src="audio/shoot.m4a" type="audio/m4a"/>
+        <source src="audio/shoot.ogg" type="audio/ogg"/>
+    </audio>
+
+    <footer>
+        <div class="score-board">
+            <div class="left-board board-section">
+                <div class="board-item">Score: <span class="total-score">0</span></div>
+                <div class="board-item">Round: <span class="round">1</span></div>
+            </div>
+            <div class="center-board board-section">
+                <div class="board-item end-message"></div>
+            </div>
+            <div class="right-board board-section">
+                <div class="board-item">Hits: <span class="kens-shot">0</span></div>
+                <div class="board-item">Shots: <span class="shots-fired">0</span></div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44581526-2', 'auto');
+    ga('send', 'KenHunt');
+
+</script>
+    <!-- End Google Analytics -->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="scripts/vendor/TweenLite.js"></script>
+    <script src="scripts/vendor/TweenMax.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/utilities/hex.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/duck.js"></script>
+    <script src="scripts/game.js"></script>
+    <!-- endbuild -->
+    </body>
+</html>

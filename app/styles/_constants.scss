@@ -1,0 +1,27 @@
+/*
+ ******************************************************************************
+ * COMMON STYLES
+ * *Please* put all shared styling information here in a single place.
+ * This includes but is not limited to:
+ *   - Text styles
+ *   - Variables for colors
+ *   - Variables for dimensions such as common grid/ui elements
+ *   - Variables for CSS easing equations (so we can achieve consistency
+ *     in our animation appearances)
+ *   - Variables for CSS transition/animation durations
+ *
+ * Please follow standard CSS naming conventions, i.e. all lower-case
+ * with hyphens.  When in doubt or brainfarting while trying to think of
+ * what to call something, you can always refer to the Compass.org
+ * styles to see how they name their variables, mixins, and functions:
+ *   http://compass-style.org/index/variables/
+ *   http://compass-style.org/index/functions/
+ *   http://compass-style.org/index/mixins/
+ *
+ */
+
+// fonts
+$font-8bit: 'Press Start 2P', cursive;
+
+// colors
+$duck-hunt-sky: #3fbfff;

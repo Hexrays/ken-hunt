@@ -1,0 +1,139 @@
+// ************************************************************
+// ************************************************************
+// Game
+// ************************************************************
+// ************************************************************
+
+.game {
+    @include size(100%, 70%);
+    @include position-absolute(0,0,10);
+
+    overflow: hidden;
+    display: none;
+    cursor: url('../images/cursor-off.png'), auto;
+
+    .is-paused & {
+        cursor: default;
+    }
+}
+
+footer {
+    @include size(100%, 200px);
+    @include position-fixed($bottom:0, $left:0, $right:0);
+
+    display    : none;
+    opacity    : 0;
+    transition : opacity 1000ms ease;
+
+
+    .is-game-on & {
+        @include flex-center();
+
+        opacity : 1;
+    }
+}
+
+
+// ************
+// score board
+// ************
+
+.score-board {
+    @include no-select();
+    @include size(90%, auto);
+
+    box-sizing    : border-box;
+    border        : 4px solid lawngreen;
+    border-radius : 6px;
+    background    : #000;
+    color         : #fff;
+
+    .is-mobile & {
+        position  : relative;
+        bottom    : 25px;
+        font-size : 1.5rem;
+    }
+}
+
+.board-section {
+    box-sizing : border-box;
+    padding    : 1rem 0.5rem;
+    width      : 33%;
+}
+
+.left-board {
+    float: left;
+}
+
+.center-board {
+    float: left;
+    text-align: center;
+}
+
+.right-board {
+    float: right;
+}
+
+.board-item {
+    padding: 0.25rem;
+}
+
+.end-message {
+    color: crimson;
+}
+
+// ************
+// duck
+// ************
+
+.duck {
+    @include size(82px, 117px);
+
+    position   : absolute;
+    z-index    : 1000;
+    visibility : hidden;
+    background : url('../images/chin.png');
+    cursor     : url('../images/cursor.png'), auto;
+
+    .is-paused & {
+        cursor: default;
+    }
+
+    &.is-shot {
+        // background : url('../images/vj.png');
+        pointer-events: none;
+    }
+}
+
+.head {
+    @include size(82px, 117px);
+
+    position   : absolute;
+    background : url('../images/head.png');
+    cursor     : url('../images/cursor.png'), auto;
+    animation  : fly 0.25s infinite ease-in-out;
+
+    .is-paused & {
+        cursor: default;
+    }
+
+    .is-shot & {
+        // display              : none;
+        animation-play-state : paused;
+        pointer-events       : none;
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
